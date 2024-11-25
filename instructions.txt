@@ -1,0 +1,58 @@
+Solving Shortest Path Problem with Dijkstra's Algorithm
+
+Objective: 
+The objective of this assignment is to implement Dijkstra's algorithm to find the shortest path through a graph from a given source node to all other nodes.
+
+Problem Statement: 
+You are given a weighted graph representing a network of interconnected nodes. Your task is to implement Dijkstra's algorithm to find the shortest path from a given source node to all other nodes in the graph. The algorithm should compute the shortest path distances and paths for all nodes reachable from the source node.
+
+Task 1: Define Graph Representation
+    - Define a data structure to represent the weighted graph. You can use an adjacency list or any other suitable data structure to represent the graph. You can use the following example
+
+class Graph:
+    def __init__(self):
+        self.vertices = {}
+
+    def add_vertex(self, vertex):
+        if vertex not in self.vertices:
+            self.vertices[vertex] = {}
+
+    def add_edge(self, source, destination, weight):
+        if source in self.vertices and destination in self.vertices:
+            self.vertices[source][destination] = weight
+            self.vertices[destination][source] = weight  # For undirected graph
+
+    def get_neighbors(self, vertex):
+        if vertex in self.vertices:
+            return self.vertices[vertex]
+        else:
+            return {}
+
+# Example usage:
+graph = Graph()
+graph.add_vertex('A')
+graph.add_vertex('B')
+graph.add_vertex('C')
+graph.add_edge('A', 'B', 5)
+graph.add_edge('B', 'C', 3)
+graph.add_edge('A', 'C', 10)
+
+print(graph.vertices)  # Output: {'A': {'B': 5, 'C': 10}, 'B': {'A': 5, 'C': 3}, 'C': {'B': 3, 'A': 10}}
+
+
+Task 2: Implement Dijkstra's Algorithm
+    - Implement Dijkstra's algorithm to compute the shortest path from a given source node ( A node ) to all other nodes in the graph. Ensure that your implementation correctly handles weighted edges and computes the shortest path distances and paths.
+
+Task 3: Test the Algorithm Implementation
+    - Test your Dijkstra's algorithm implementation with different graph configurations. Verify that the algorithm correctly computes the shortest paths from the source node to all other nodes in the graph.
+
+Task 4: Analyze Time and Space Complexity
+    - Analyze the time and space complexity of your Dijkstra's algorithm implementation. Provide insights into the efficiency of the algorithm and any potential optimization opportunities.
+
+Expected Outcomes:
+
+Upon completing this assignment, students should be able to:
+    - Define a suitable data structure to represent the weighted graph for Dijkstra's algorithm.
+    - Implement Dijkstra's algorithm to compute the shortest path from a given source node to all other nodes in the graph.
+    - Test the correctness of the algorithm implementation with different graph configurations.
+    - Analyze the time and space complexity of Dijkstra's algorithm and identify potential optimization strategies for improved performance.
