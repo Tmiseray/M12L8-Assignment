@@ -57,9 +57,6 @@ class Graph {
 }
 
 
-
-
-// Example usage:
 const graph = new Graph();
 
 graph.addVertex('A');
@@ -70,7 +67,28 @@ graph.addEdge('A', 'B', 5);
 graph.addEdge('B', 'C', 3);
 graph.addEdge('A', 'C', 10);
 
-console.log(graph.vertices);  // Output: {'A': {'B': 5, 'C': 10}, 'B': {'A': 5, 'C': 3}, 'C': {'B': 3, 'A': 10}}
+console.log(graph.vertices);
 
 const distances = graph.getShortestDistance('A');
 console.log('Distances from "A":', distances);
+
+
+/*
+
+Time Complexity:
+    O((V + E) log V)
+    Where:
+        - V is the number of vertices (nodes)
+        - E is the number of edges (connections between nodes)
+
+Space Complexity:
+    O(V + E)
+    Where:
+        - V is the number of vertices (nodes)
+        - E is the number of edges (connections between nodes)
+
+Special Considerations:
+    Dense Graph: O(E)
+    Sparse Graph: O(V log V)
+
+*/

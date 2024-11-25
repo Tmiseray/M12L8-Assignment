@@ -37,8 +37,6 @@ class Graph:
         return distances
 
 
-
-# Example usage:
 graph = Graph()
 
 graph.add_vertex('A')
@@ -49,7 +47,28 @@ graph.add_edge('A', 'B', 5)
 graph.add_edge('B', 'C', 3)
 graph.add_edge('A', 'C', 10)
 
-print(graph.vertices)  # Output: {'A': {'B': 5, 'C': 10}, 'B': {'A': 5, 'C': 3}, 'C': {'B': 3, 'A': 10}}
+print(graph.vertices)
 
 distances = graph.get_shortest_path('A')
 print('Shortest distances from "A":', distances)
+
+
+"""
+
+Time Complexity:
+    O((V + E) log V)
+    Where:
+        - V is the number of vertices (nodes)
+        - E is the number of edges (connections between nodes)
+
+Space Complexity:
+    O(V + E)
+    Where:
+        - V is the number of vertices (nodes)
+        - E is the number of edges (connections between nodes)
+
+Special Considerations:
+    Dense Graph: O(E)
+    Sparse Graph: O(V log V)
+
+"""
